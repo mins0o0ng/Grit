@@ -1,30 +1,30 @@
-// RegisterPage.js
 import React from 'react';
 import './RegisterPage.css';
 
 class RegisterPage extends React.Component {
-    // 서버 주소를 변수로 선언
-    serverURL = 'YOUR_SERVER_ADDRESS_HERE';
+    serverURL = 'http://172.20.7.211:8080';
 
     handleSubmit = async (event) => {
-        event.preventDefault(); // 기본 폼 제출 동작 방지
+        event.preventDefault();
         const formData = new FormData(event.target);
 
         try {
-            const response = await fetch(`${this.serverURL}/register`, {
+            const response = await fetch(`${this.serverURL}/auth/join`, {
                 method: 'POST',
-                body: formData, // 폼 데이터를 서버로 전송
+                body: formData,
             });
             if (response.ok) {
                 const jsonResponse = await response.json();
-                console.log(jsonResponse); // 서버 응답 처리
-                alert("회원가입이 완료되었습니다."); // 사용자에게 회원가입 완료 알림
+                console.log(jsonResponse);
+                alert("회원가입이 완료되었습니다.");
             } else {
-                throw new Error('회원가입에 실패했습니다.'); // 실패 처리
+                const errorText = await response.text();
+                throw new Error(`회원가입에 실패했습니다. 상태 코드: ${response.status}, 메시지: ${errorText}`);
             }
+            
         } catch (error) {
             console.error(error);
-            alert(error.message); // 사용자에게 오류 메시지 표시
+            alert(error.message);
         }
     }
 
@@ -33,8 +33,7 @@ class RegisterPage extends React.Component {
             <div className="registration-container">
                 <h1>회원가입</h1>
                 <h2>GRIT에 한 발짝 가까워진 여러분을 환영합니다.</h2>
-                <form className="registration-form" onSubmit={this.handleSubmit}/>
-                <form className="registration-form">
+                <form className="registration-form" onSubmit={this.handleSubmit}>
                     <label htmlFor="school">학교</label>
                     <input type="text" id="school" name="school" required />
 
@@ -62,6 +61,7 @@ class RegisterPage extends React.Component {
 
                     <label htmlFor="student_id">학생증 인증</label>
                     <input type="file" id="student_id" name="student_id" accept="image/*" required />
+
                     <button type="submit" className="register-button">회원가입</button>
                 </form>
             </div>

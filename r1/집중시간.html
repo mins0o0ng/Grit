@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grit</title>
+    <link rel="stylesheet" href="집중시간.css" />
+  </head>
+  <body>
+    <header></header>
+    <main id="focus-time">
+      <div id="anime-bar">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="stopwatch">00:00:00</div>
+      <div>
+        <button id="startStopBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <span id="focus-comment">Click and start to focus</span>
+      <div id="accumulatedTime">Focus-Time: 00H 00M 00S</div>
+    </main>
+    <div id="white-noise">
+      <h1>White Noise</h1>
+      <button id="playBtn">Play</button>
+      <input
+        type="range"
+        id="volumeControl"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5"
+      />
+      <label for="volumeControl">Volume</label>
+      <audio id="whiteNoise" src="white_noise.mp3"></audio>
+    </div>
+    <script src="집중시간.js"></script>
+  </body>
+</html>

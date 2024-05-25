@@ -22,9 +22,9 @@ function Calendar() {
     setCurrentMonth(currentMonth => (currentMonth < 11 ? currentMonth + 1 : 0));
   };
 
-  // 날짜 버튼 클릭 시 호출될 함수입니다. 해당 날짜의 To Do List 페이지로 이동합니다.
-  const goToTodo = (date) => {
-    navigate(`/todo/${new Date(2024, currentMonth, date).toISOString().split('T')[0]}`);
+  // ImageDisplay 페이지로 이동하는 함수
+  const goToImageDisplay = () => {
+    navigate('/imagedisplay'); // ImageDisplay 페이지의 경로로 이동합니다.
   };
 
   // 요일 헤더를 렌더링하는 함수
@@ -72,8 +72,9 @@ function Calendar() {
     <div className="calendar-container">
       <div className="month-navigation">
         <button onClick={prevMonth} className="month-button">&#9664;</button>
-        <span className="month-label">{monthNames[currentMonth]}</span>
+        <span className="month-label">{monthNames[currentMonth]} Month</span>
         <button onClick={nextMonth} className="month-button">&#9654;</button>
+        <button onClick={goToImageDisplay} className="image-display-button">Image Display 페이지로 이동</button> {/* ImageDisplay 페이지로 이동하는 버튼을 추가 */}
       </div>
       <table className="calendar-table">
         <thead>

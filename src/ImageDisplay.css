@@ -1,0 +1,17 @@
+.header {
+    background-color: #4CAF50; /* 초록색 배경 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    top: 0; /* 상단에 위치 */
+    width: 100%; /* 전체 너비를 차지하도록 설정 */
+    position: fixed; /* 뷰포트에 상대적으로 고정 */
+    z-index: 1000; /* 다른 요소들 위에 나타나도록 z-index 설정 */
+}
+  
+.content {
+    padding-top: 80px; /* .header의 고정 위치 때문에 .content의 상단 패딩을 조정 */
+    padding: 20px;
+}
