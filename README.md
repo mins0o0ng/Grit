@@ -1,1 +1,1 @@
-READ ME
+ToDoList, 집중시간, cafe 기능은 html을 웹에 직접 올려 작동시켜야합니다.
