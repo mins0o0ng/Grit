@@ -17,28 +17,20 @@ const ImageDisplay = () => {
     setLoading(true);
     setError(null);
     try {
-      // fetch 함수의 두 번째 인자에 메서드, 헤더, (필요하다면) 본문을 포함시킨다.
-      const response = await fetch('http://172.20.7.211:8080/makeBadge/makeBadge', {
-        method: 'POST', // HTTP 메서드를 POST로 설정
+      const response = await fetch('http://172.20.7.211:8080/badge/badges', {
+        method: 'GET', // HTTP 메서드를 GET으로 설정
         headers: {
-          // 내용 유형 헤더를 설정하는 것이 좋음. 이 경우 JSON을 예로 들었습니다.
-          // 'Content-Type': 'application/json',
-          // 만약 서버가 폼 데이터를 받는다면, 아래와 같이 설정할 수 있습니다.
-          // 'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/jpg'
         },
-        // body 데이터를 JSON 문자열로 변환하여 포함시킨다.
-        // JSON을 사용하는 경우에는 아래와 같이 설정합니다.
-        // body: JSON.stringify({ key: 'value' }),
-        // 폼 데이터를 사용하는 경우에는 아래와 같이 FormData 객체를 사용할 수 있습니다.
-        // let formData = new FormData();
-        // formData.append('key', 'value');
-        // body: formData,
       });
       if (!response.ok) {
         throw new Error('네트워크 응답이 올바르지 않습니다.');
       }
-      const blob = await response.blob();
-      const imageUrl = URL.createObjectURL(blob);
+      // 서버로부터 JSON 응답을 받고, 그 안에서 이미지 URL을 추출합니다.
+      const data = await response.json(); // 서버 응답을 JSON으로 변환
+      // data 객체 구조에 따라 실제 이미지 URL을 추출하는 경로를 조정해야 할 수 있습니다.
+      // 예를 들어, 서버가 { imageUrl: "http://example.com/image.png" } 형태로 응답한다고 가정합니다.
+      const imageUrl = data.imageUrl; // 서버 응답에서 이미지 URL을 추출
       setImageUrl(imageUrl);
     } catch (error) {
       setError(error.message);

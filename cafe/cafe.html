@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grit</title>
+    <link rel="stylesheet" href="cafe.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="headername">Grit Cafe</h1>
+    </header>
+    <main>
+      <form id="submit-form">
+        <h2 id="submit-header">게시글 추가</h2>
+        <input id="submit-title" type="text" placeholder="제목" required />
+        <textarea
+          id="submit-input"
+          placeholder="내용을 입력하세요..."
+          required
+        ></textarea>
+        <div class="btn-form">
+          <div class="dropdown">
+            <button class="dropbtn">카테고리</button>
+            <div class="dropdown-content" id="dropdownContent">
+              <a
+                href="#"
+                class="option1"
+                onclick="selectItem(event, 'Option 1')"
+                >자유게시판</a
+              >
+              <a
+                href="#"
+                class="option2"
+                onclick="selectItem(event, 'Option 2')"
+                >자료공유</a
+              >
+            </div>
+          </div>
+          <input id="submit-btn" type="submit" />
+        </div>
+      </form>
+
+      <div id="submit-box">
+        <h2>< 게시글 목록 ></h2>
+        <div id="submit-list"></div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="cafe.js"></script>
+  </body>
+</html>
