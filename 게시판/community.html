@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRIT_COMMUNITY</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>GRIT COMMUNITY</h1>
+        </header>
+        <div class="input-cont">
+            <form id="submit-box">
+                <h2>게시물 추가</h2>
+                <div class="title-box">
+                    <input type="text" id="submit-title" placeholder="제목" required />
+
+                    <div class="dropdown">
+                        <input type="button" id="drop-btn" value="카테고리" />
+                        <div class="dropContent">
+                            <a href="#" class="opt1" onclick="selectItem(event, '자유게시판')">자유게시판</a>
+                            <a href="#" class="opt2" onclick="selectItem(event, '자료공유')">자료공유</a>
+                        </div>
+                    </div>
+                </div>
+                <textarea id="submit-input" placeholder="내용을 입력하세요..." required></textarea>
+                <input type="submit" id="submit-btn" />
+            </form>
+            <form id="contents-box">
+                <h2>게시글 목록</h2>
+                <div class="contents-box">
+                    <div id="submit-list">
+                        <!-- 게시글 항목이 여기에 추가됩니다. -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- 모달 -->
+    <div id="modal" class="modal">
+        <div class="modal-content-box" id="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h3>제목</h3>
+            <p class="modal-category">카테고리| </p>
+            <p class="modal-time">작성시간| </p>
+            <p class="modal-content-text">내용</p>
+        </div>
+    </div>
+
+    <script src="community.js"></script>
+</body>
+
+</html>

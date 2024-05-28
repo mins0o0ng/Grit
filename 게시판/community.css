@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Reddit+Mono:wght@200..900&display=swap');
+
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+
+@font-face {
+  font-family: "Oswald", sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+body{
+  font-family: 'Oswald', sans-serif;
+  background-color: white;
+}
+
+main{
+  /* design */
+  width: 90%;
+  height: 90vh;
+  margin : 0 auto;
+  margin-top: 5vh;
+  padding: 30px;
+  border : 2.5px ridge #16572962;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px 2px #16572962;
+
+  background-color: #e7f5e9;
+
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main header{
+  width: 100%;
+  height: 10%;
+}
+main header h1{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color : #4caf4f;
+}
+
+main .input-cont{
+  width: 100%;
+  height: 85%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .input-cont #submit-box{
+  width: 30%;
+  height: 100%;
+
+  margin : 0 auto;
+  padding: 10px;
+
+  text-align: center;
+
+  background-color: white;
+  border: 1px groove #16572962;
+  border-radius: 10px;
+  box-shadow:  0 0 5px 2px #16572962;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .input-cont #submit-box h2{
+  font-size: 25px;
+  font-weight: bold;
+  color : #4caf4f;
+}
+
+main .input-cont #submit-box .title-box{
+  width: 90%;
+  height: 5%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 제출 박스 - 제목 */
+main .input-cont #submit-box .title-box #submit-title{
+  width: 70%;
+  height: 100%;
+
+  padding: 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border: 1px solid #16572962;
+  border-radius: 5px;
+}
+
+/* 제출 박스 - 카테고리 */
+
+main .input-cont #submit-box .title-box .dropdown {
+  width: 25%;
+  height: 100%;
+
+  position: relative;
+  display: inline-block;
+  border: none;
+}
+
+main .input-cont #submit-box .title-box .dropdown #drop-btn {
+  width: 100%;
+  height: 100%;
+  
+  background-color: #4caf4f;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main .input-cont #submit-box .title-box .dropdown .dropContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+main .input-cont #submit-box .title-box .dropdown .dropContent a {
+  font-size : 14px;
+  color: black;
+  padding: 2px;
+  text-decoration: none;
+  display: block;
+}
+
+main .input-cont #submit-box .title-box .dropdown .dropContent a:hover {
+  background-color: #f1f1f1;
+}
+
+main .input-cont #submit-box .title-box .dropdown:hover .dropContent {
+  display: block;
+}
+/* 카테고리 끝 */
+
+/* 제출 박스 - 컨텐츠 입력란 */
+main .input-cont #submit-box #submit-input{
+  width: 90%;
+  height: 80%;
+
+  padding: 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border: 1px groove #16572962;
+  border-radius: 5px;
+}
+/* 제출 박스 - 제출 버튼 */
+main .input-cont #submit-box #submit-btn{
+  width: 90%;
+  height: 5%;
+
+  background-color: #4caf4f;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 게시글 목록 */
+main .input-cont #contents-box{
+  width: 65%;
+  height: 100%;
+
+  /* margin : 0 auto; */
+  padding: 10px;
+
+  text-align: center;
+
+  background-color: white;
+
+  border: 1px groove #16572962;
+  border-radius: 10px;
+  box-shadow:  0 0 5px 2px #16572962;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 게시글 목록 - 제목 */
+main .input-cont #contents-box h2{
+  width: 95%;
+  height: 10%;
+
+  font-size: 25px;
+  font-weight: bold;
+  color : #4caf4f;
+}
+
+/* 게시글 목록 - 박스 */
+
+main .input-cont #contents-box .contents-box{
+  width: 95%;
+  height: 90%;
+
+  padding: 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border: 1px groove #16572962;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .input-cont #contents-box .contents-box #submit-list{
+  width: 100%;
+  height: 5%;
+
+  cursor: pointer;
+}
+
+/* 게시글 목록 - 박스 - 리스트 */
+main .input-cont #contents-box .contents-box #submit-list .submit-item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 14px;
+
+  margin-bottom: 10px;
+}
+
+main .input-cont #contents-box .contents-box #submit-list .submit-item .category {
+  width: 12%;
+  padding: 5px;
+  border-right: 1px solid #888;
+}
+
+main .input-cont #contents-box .contents-box #submit-list .submit-item .title {
+  text-align: left;
+  width: 65%;
+  padding: 10px;
+}
+
+main .input-cont #contents-box .contents-box #submit-list .submit-item .time{
+  width: 25%;
+  padding: 5px;
+  border-left:  1px solid #888;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content-box {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px;
+}
+.modal-close {
+  grid-column: span 2;
+  text-align: right;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+
+  height: 25px;
+}
+
+.modal-content-box h3 {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+
+  height: 25px;
+}
+
+.modal-time {
+  grid-column: 2 / 2;
+  font-size: 14px;
+
+  text-align: right;
+}
+
+.modal-category {
+  grid-column: 1 / 1;
+  font-size: 14px;
+  text-align: left;
+}
+
+.modal-content-text {
+  grid-column: span 2;
+  font-size: 16px;
+  margin-top: 10px;
+}
